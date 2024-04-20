@@ -16,6 +16,6 @@ export class AppComponent {
   title = 'spotiapp';
 
   constructor(private authService: AuthService) {
-    this.authService.getToken();
+    this.authService.initializeToken();
   }
 }
