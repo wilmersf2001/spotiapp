@@ -1,0 +1,135 @@
+<nav class="flex flex-col p-2 gap-y-2 sm:w-72 min-h-screen">
+  <ul class="bg-[#121212] rounded-lg p-4 flex flex-col gap-y-6">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="text-white"
+        class="flex gap-x-4 font-bold text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-home"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+          <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+        </svg>
+        Inicio
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/search"
+        routerLinkActive="text-white"
+        class="flex gap-x-4 font-bold text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+          <path d="M21 21l-6 -6" />
+        </svg>
+        Buscar
+      </a>
+    </li>
+  </ul>
+  <div class="flex flex-col bg-[#121212] rounded-lg p-4 gap-y-4">
+    <div class="flex justify-between items-center">
+      <button
+        type="button"
+        class="flex gap-x-4 font-bold text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-books"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M5 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"
+          />
+          <path
+            d="M9 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"
+          />
+          <path d="M5 8h4" />
+          <path d="M9 16h4" />
+          <path
+            d="M13.803 4.56l2.184 -.53c.562 -.135 1.133 .19 1.282 .732l3.695 13.418a1.02 1.02 0 0 1 -.634 1.219l-.133 .041l-2.184 .53c-.562 .135 -1.133 -.19 -1.282 -.732l-3.695 -13.418a1.02 1.02 0 0 1 .634 -1.219l.133 -.041z"
+          />
+          <path d="M14 9l4 -1" />
+          <path d="M16 16l3.923 -.98" />
+        </svg>
+        Tu biblioteca
+      </button>
+      <button
+        type="button"
+        class="rounded-full text-gray-400 hover:text-white hover:bg-[#161616] p-[4px] first-letter:transition-all duration-300 ease-in-out"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M5 12l14 0" />
+          <path d="M13 18l6 -6" />
+          <path d="M13 6l6 6" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex gap-x-2">
+      <span>
+        <a
+          href="#"
+          class="bg-[#292929] py-1 px-3 rounded-full hover:bg-[#2b2b2b] transition-all duration-300 ease-in-out font-bold text-sm"
+        >
+          Playlists
+        </a>
+      </span>
+      <span
+        ><a
+          href="#"
+          class="bg-[#292929] py-1 px-3 rounded-full hover:bg-[#2b2b2b] transition-all duration-300 ease-in-out font-bold text-sm"
+        >
+          Artistas
+        </a>
+      </span>
+    </div>
+    <ul>
+      <li>Carpetas con música</li>
+    </ul>
+  </div>
+</nav>
