@@ -3,12 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ItemPlaylist, ItemTrack } from '../../interfaces/play-list';
 import { MinutosPipe } from '../../pipes/minutos.pipe';
+import { CapitalizarPipe } from '../../pipes/capitalizar.pipe';
 import { PlaylistService } from '../../services/playlist.service';
 
 @Component({
   selector: 'app-playlist',
   standalone: true,
-  imports: [MinutosPipe],
+  imports: [MinutosPipe, CapitalizarPipe],
   templateUrl: './playlist.component.html',
   styleUrl: './playlist.component.scss',
 })
