@@ -9,7 +9,7 @@ import { UserComponent } from './pages/user/user.component';
 export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'playlist', component: PlaylistComponent },
+  { path: 'playlist/:id', component: PlaylistComponent },
   { path: 'news', component: NewsComponent },
   { path: 'preferences', component: PreferencesComponent },
   { path: 'user', component: UserComponent },
