@@ -1,8 +1,8 @@
 <div class="bg-[#202020] rounded-lg px-6 py-5">
   <section class="mt-12">
-    <h2 class="text-2xl font-semibold">Hecho para Wilmer</h2>
+    <h2 class="text-2xl font-semibold">PlayList Destacadas</h2>
     <div
-      class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-4 mt-2"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 gap-4 mt-2"
       [@fadeInAnimation]
     >
       @if (playList.length === 0) { @for (number of arrayNumbers; track $index)
@@ -49,38 +49,34 @@
         </div>
       </div>
       } } @for (play of playList; track play.id) {
-      <button
-        type="button"
-        class="card flex flex-col rounded-lg p-3 hover:bg-[#1a1a1a] hover:cursor-pointer"
-        (click)="playMusic(play.id)"
+      <app-card-play-list [playlist]="play"></app-card-play-list>
+      }
+    </div>
+  </section>
+  <section>
+    <h2 class="text-2xl font-semibold">Lanzamiento de nuevos álbumes</h2>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 gap-4 mt-2"
+      [@fadeInAnimation]
+    >
+      @defer (on viewport) { @for (album of albums; track album.id) {
+      <app-card-album [album]="album"></app-card-album>
+      } } @placeholder {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-loader-2 animate-spin"
       >
-        <div class="relative">
-          <img
-            class="rounded-lg mb-2"
-            src="{{ play.images[0].url }}"
-            alt="{{ play.name }}"
-          />
-          <div
-            class="icono absolute text-black bg-[#1ed861] right-2 bottom-4 p-3 rounded-full opacity-0 transition duration-500 ease-in-out"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="icon icon-tabler icons-tabler-filled icon-tabler-player-play"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
-              />
-            </svg>
-          </div>
-        </div>
-        <h2 class="text-base font-semibold mb-2">{{ play.name }}</h2>
-        <p class="text-sm text-gray-400">{{ play.description }}</p>
-      </button>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 3a9 9 0 1 0 9 9" />
+      </svg>
       }
     </div>
   </section>

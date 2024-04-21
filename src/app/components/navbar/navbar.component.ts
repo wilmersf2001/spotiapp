@@ -5,8 +5,15 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  goBack() {
+    console.log('go back');
+    window.history.back();
+  }
 
+  goForward() {
+    window.history.forward();
+  }
 }
