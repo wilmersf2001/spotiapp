@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ItemPlaylist, ItemTrack } from '../../interfaces/play-list';
+import { SrcTrackPipe } from '../../pipes/src-track.pipe';
 import { MinutosPipe } from '../../pipes/minutos.pipe';
 import { CapitalizarPipe } from '../../pipes/capitalizar.pipe';
 import { PlaylistService } from '../../services/playlist.service';
@@ -9,7 +10,7 @@ import { PlaylistService } from '../../services/playlist.service';
 @Component({
   selector: 'app-playlist',
   standalone: true,
-  imports: [MinutosPipe, CapitalizarPipe],
+  imports: [MinutosPipe, CapitalizarPipe, SrcTrackPipe],
   templateUrl: './playlist.component.html',
   styleUrl: './playlist.component.scss',
 })
@@ -28,7 +29,6 @@ export class PlaylistComponent {
           this.playlist = playlist;
           this.cantidad = playlist.tracks.total;
           this.tracks = playlist.tracks.items;
-          console.log(this.tracks);
         },
         error: (error) => {
           console.error(error);

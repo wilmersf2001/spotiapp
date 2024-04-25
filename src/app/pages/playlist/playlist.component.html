@@ -72,18 +72,31 @@
           </tr>
         </thead>
         <tbody>
-          @for (track of tracks; track $index) {
+          @defer (on viewport) { @for (track of tracks; track $index) {
           <tr>
-            <td class="px-6 py-4">{{ $index + 1 }}</td>
+            <td class="px-6 py-4 w-10">{{ $index + 1 }}</td>
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              class="px-6 py-4 font-medium whitespace-nowraptext-white"
             >
-              {{ track.track.name }}
+              <iframe
+                style="border-radius: 12px; height: 80px"
+                [src]="track.track.uri | srcTrack"
+                width="100%"
+                height="auto"
+                frameBorder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
             </th>
-            <td class="px-6 py-4">{{ track.track.album.name }}</td>
+            <td class="px-6 py-4 w-52 overflow-hidden text-ellipsis">
+              {{ track.track.album.name }}
+            </td>
             <td class="px-6 py-4">{{ track.track.duration_ms | minutos }}</td>
           </tr>
+          } } @placeholder {
+          <p>Cargando...</p>
           }
         </tbody>
       </table>

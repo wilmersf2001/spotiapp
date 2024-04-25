@@ -27,6 +27,10 @@
       </svg>
     </div>
   </div>
-  <h2 class="text-base font-semibold mb-2">{{ playlist.name }}</h2>
+  <h2
+    class="text-base font-semibold mb-2 text-ellipsis text-nowrap overflow-hidden max-w-40"
+  >
+    {{ playlist.name }}
+  </h2>
   <p class="text-sm text-gray-400">{{ playlist.description }}</p>
 </button>
