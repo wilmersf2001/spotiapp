@@ -8,14 +8,17 @@
   }
 </style>
 
-<main class="main">
-  <div class="flex">
+<main class="min-h-screen">
+  <div class="flex min-h-[88vh] max-h-[88vh] overflow-hidden">
     <app-sidebar></app-sidebar>
     <div class="p-2 w-full relative">
-      <div class="absolute left-0 right-0 pt-4 mx-8 z-10">
+      <div class="absolute left-0 right-0 p-2 top-0 z-10">
         <app-navbar></app-navbar>
       </div>
       <router-outlet></router-outlet>
     </div>
+  </div>
+  <div class="min-h-[12vh] flex bg-black">
+    <app-footer></app-footer>
   </div>
 </main>

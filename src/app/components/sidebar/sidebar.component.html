@@ -1,6 +1,4 @@
-<nav
-  class="flex flex-col p-2 gap-y-2 min-h-screen md:w-72 lg:w-80 2xl:w-[420px]"
->
+<nav class="flex flex-col gap-y-2 md:w-72 lg:w-80 2xl:w-[420px] p-2 h-full">
   <ul class="bg-[#121212] rounded-lg px-6 py-5 flex flex-col gap-y-6">
     <li>
       <a
@@ -54,8 +52,10 @@
       </a>
     </li>
   </ul>
-  <div class="flex flex-col bg-[#121212] rounded-lg p-4 gap-y-4">
-    <div class="flex justify-between items-center">
+  <div
+    class="box-border flex flex-col bg-[#121212] rounded-lg pl-1 gap-y-4 h-[76.5%] pb-1"
+  >
+    <div class="flex justify-between items-center pt-4 px-4">
       <button
         type="button"
         class="flex gap-x-4 font-bold text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
@@ -112,7 +112,7 @@
         </svg>
       </button>
     </div>
-    <div class="flex gap-x-2">
+    <div class="flex gap-x-2 px-4">
       <span>
         <a
           href="#"
@@ -130,29 +130,48 @@
         </a>
       </span>
     </div>
-
-    <img
-      src="https://misc.scdn.co/your-episodes/SE-64.png 32w, https://misc.scdn.co/your-episodes/SE-64.png 64w"
-      alt=""
-    />
-    <ul class="flex flex-col gap-y-4">
+    <ul class="flex flex-col overflow-y-auto">
       <li>
-        <app-playlist-card-compact></app-playlist-card-compact>
+        <app-playlist-card-compact
+          [src]="'https://misc.scdn.co/liked-songs/liked-songs-64.png'"
+          [title]="'Tus me gusta'"
+          [description]="'Playlist . 12 canciones'"
+        ></app-playlist-card-compact>
       </li>
       <li>
-        <app-artist-card-compact></app-artist-card-compact>
+        <app-artist-card-compact
+          [src]="'assets/images-artist/jesus-adrian.jpeg'"
+          [title]="'Jesus Adrian'"
+          [description]="'Artista'"
+        ></app-artist-card-compact>
       </li>
       <li>
-        <app-artist-card-compact></app-artist-card-compact>
+        <app-artist-card-compact
+          [src]="'assets/images-artist/alex-campos.jpeg'"
+          [title]="'Alex Campos'"
+          [description]="'Artista'"
+        ></app-artist-card-compact>
       </li>
       <li>
-        <app-artist-card-compact></app-artist-card-compact>
+        <app-artist-card-compact
+          [src]="'assets/images-artist/michael-jackson.jpg'"
+          [title]="'Michael Jackson'"
+          [description]="'Artista'"
+        ></app-artist-card-compact>
       </li>
       <li>
-        <app-playlist-card-compact></app-playlist-card-compact>
+        <app-playlist-card-compact
+          [src]="'assets/images-playlist/planetshakers.jpeg'"
+          [title]="'Planetshakers'"
+          [description]="'Playlist . Wilmer'"
+        ></app-playlist-card-compact>
       </li>
       <li>
-        <app-playlist-card-compact></app-playlist-card-compact>
+        <app-playlist-card-compact
+          [src]="'https://misc.scdn.co/your-episodes/SE-64.png'"
+          [title]="'Tus episodios'"
+          [description]="'Episodios guardados y descargados'"
+        ></app-playlist-card-compact>
       </li>
     </ul>
   </div>
