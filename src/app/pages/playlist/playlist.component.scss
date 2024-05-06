@@ -1,0 +1,20 @@
+/* Establece el ancho de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px; /* Ajusta el ancho según prefieras */
+ }
+ 
+ /* Establece el color y el radio de las esquinas del thumb */
+ ::-webkit-scrollbar-thumb {
+  background: rgb(150, 150, 150); /* Color del thumb */
+  border-radius: 5px; /* Radio de las esquinas */
+ }
+ 
+ /* Cambia el color del thumb al pasar el cursor sobre él */
+ ::-webkit-scrollbar-thumb:hover {
+  background: rgb(131, 131, 131); /* Color al pasar el cursor */
+ }
+ 
+ /* Cambia el color del thumb al hacer clic en él */
+ ::-webkit-scrollbar-thumb:active {
+  background: rgb(104, 104, 104); /* Color al hacer clic */
+ }

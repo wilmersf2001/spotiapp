@@ -31,7 +31,7 @@ export class PlaylistComponent {
           this.tracks = playlist.tracks.items;
         },
         error: (error) => {
-          console.error(error);
+          console.warn('Error:', error);
         },
       });
     });

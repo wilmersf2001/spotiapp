@@ -1,15 +1,35 @@
-<div class="w-full h-full">
+<div class="w-full max-h-screen overflow-y-auto h-full">
   <div class="relative w-full pt-20">
     <div
       class="absolute top-0 z-[-2] h-full w-full bg-[#06161e] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(158,186,165,0.3),rgba(6,23,31,0))] rounded-t-lg"
     ></div>
     <div class="flex px-8 pb-6 gap-x-8">
       <div class="w-56 aspect-square">
+        @defer (on viewport) {
         <img
           class="rounded-md"
           [src]="playlist.images[0].url"
           [alt]="playlist.name"
         />
+        } @placeholder {
+        <div role="status" class="space-y-8 animate-pulse rtl:space-x-reverse">
+          <div
+            class="flex items-center justify-center w-full h-48 bg-gray-300 rounded dark:bg-gray-700"
+          >
+            <svg
+              class="w-10 h-10 text-gray-200 dark:text-gray-600"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 18"
+            >
+              <path
+                d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"
+              />
+            </svg>
+          </div>
+        </div>
+        }
       </div>
       <div class="flex flex-col justify-end gap-y-5">
         <p class="text-sm">{{ playlist.type | capitalizar }}</p>
@@ -42,7 +62,6 @@
     <div
       class="absolute top-0 z-[-2] h-full w-full bg-[#06161e] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(64,75,67,0.3),rgba(20,24,21,0))] rounded-b-xl"
     ></div>
-
     <div class="relative overflow-x-auto px-8">
       <table class="w-full text-sm text-left rtl:text-righttext-gray-400">
         <thead class="text-xs text-gray-400">
@@ -96,7 +115,69 @@
             <td class="px-6 py-4">{{ track.track.duration_ms | minutos }}</td>
           </tr>
           } } @placeholder {
-          <p>Cargando...</p>
+
+          <tr>
+            <td class="px-6 py-4 w-10">
+              <div
+                role="status"
+                class="w-full p-4 space-y-4 border divide-y rounded shadow animate-pulse divide-gray-700 md:p-6 border-gray-700"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="h-2.5 rounded-full bg-gray-700 w-4"></div>
+                </div>
+                <span class="sr-only">Loading...</span>
+              </div>
+            </td>
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium whitespace-nowraptext-white"
+            >
+              <div
+                role="status"
+                class="w-96 flex items-center justify-center h-16 max-w-sm rounded-lg animate-pulse bg-gray-700"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M13 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M9 17v-13h10v13" />
+                  <path d="M9 8h10" />
+                </svg>
+                <span class="sr-only">Loading...</span>
+              </div>
+            </th>
+            <td class="px-6 py-4 w-52 overflow-hidden text-ellipsis">
+              <div
+                role="status"
+                class="w-full p-4 space-y-4 border divide-y rounded shadow animate-pulse divide-gray-700 md:p-6 border-gray-700"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="h-2.5 rounded-full bg-gray-700 w-full"></div>
+                </div>
+                <span class="sr-only">Loading...</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div
+                role="status"
+                class="w-full p-4 space-y-4 border divide-y rounded shadow animate-pulse divide-gray-700 md:p-6 border-gray-700"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="h-2.5 rounded-full bg-gray-700 w-full"></div>
+                </div>
+                <span class="sr-only">Loading...</span>
+              </div>
+            </td>
+          </tr>
           }
         </tbody>
       </table>

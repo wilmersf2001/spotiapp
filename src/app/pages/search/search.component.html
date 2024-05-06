@@ -24,25 +24,57 @@
     <input
       class="bg-[#2a2a2a] placeholder:text-sm border-none focus:outline-none text-white w-full ml-2"
       type="search"
-      placeholder="¿Qué quieres reporducir?"
+      placeholder="¿Qué quieres reproducir?"
+      [formControl]="searchControl"
     />
   </form>
   <div class="flex gap-x-2 mt-12">
-    <span>
-      <a
-        href="#"
-        class="bg-[#292929] py-1 px-3 rounded-full hover:bg-[#2b2b2b] transition-all duration-300 ease-in-out font-bold text-sm"
-      >
-        Playlists
-      </a>
-    </span>
-    <span
-      ><a
-        href="#"
-        class="bg-[#292929] py-1 px-3 rounded-full hover:bg-[#2b2b2b] transition-all duration-300 ease-in-out font-bold text-sm"
-      >
-        Artistas
-      </a>
-    </span>
+    <button
+      [ngClass]="{ 'bg-white text-[#2b2b2b]': type === 'album' }"
+      class="bg-[#292929] py-1 px-3 rounded-full transition-all duration-300 ease-in-out font-bold text-sm hover:cursor-pointer"
+      (click)="modifyType('album')"
+    >
+      Álbums
+    </button>
+    <button
+      [ngClass]="{ 'bg-white text-[#2b2b2b]': type === 'artist' }"
+      class="bg-[#292929] py-1 px-3 rounded-full transition-all duration-300 ease-in-out font-bold text-sm hover:cursor-pointer"
+      (click)="modifyType('artist')"
+    >
+      Artists
+    </button>
+    <button
+      [ngClass]="{ 'bg-white text-[#2b2b2b]': type === 'playlist' }"
+      class="bg-[#292929] py-1 px-3 rounded-full transition-all duration-300 ease-in-out font-bold text-sm hover:cursor-pointer"
+      (click)="modifyType('playlist')"
+    >
+      Playlists
+    </button>
   </div>
+
+  <section class="mt-5 flex flex-col items-center">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 gap-4 mt-2"
+    >
+      @defer (on viewport) { @for (data of dataSearch; track data.id) {
+      <app-card-search [data]="data"></app-card-search>
+      } } @placeholder {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-loader-2 animate-spin"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 3a9 9 0 1 0 9 9" />
+      </svg>
+      }
+    </div>
+  </section>
 </div>
