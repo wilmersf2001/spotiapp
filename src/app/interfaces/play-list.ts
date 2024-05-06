@@ -30,10 +30,6 @@ export interface ItemPlaylist {
   uri: string;
 }
 
-export interface ExternalUrls {
-  spotify: string;
-}
-
 export interface Image {
   height: null;
   url: string;
@@ -75,16 +71,15 @@ export enum PrimaryColor {
   The5Ff550 = '#5FF550',
 }
 
+export enum ItemType {
+  Playlist = 'playlist',
+}
+
 export interface Tracks {
   href: string;
   items: ItemTrack[];
   total: number;
 }
-
-export enum ItemType {
-  Playlist = 'playlist',
-}
-
 export interface ItemTrack {
   added_at: Date;
   added_by: AddedBy;
@@ -101,10 +96,6 @@ export interface AddedBy {
   type: string;
   uri: string;
   name?: string;
-}
-
-export interface ExternalUrls {
-  spotify: string;
 }
 
 export interface Track {
@@ -151,4 +142,8 @@ export interface ExternalIDS {
 
 export interface VideoThumbnail {
   url: null;
+}
+
+export interface ExternalUrls {
+  spotify: string;
 }

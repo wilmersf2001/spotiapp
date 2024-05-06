@@ -11,11 +11,9 @@ import { Router } from '@angular/router';
 })
 export class CardPlayListComponent {
   @Input() playlist!: ItemPlaylist;
-  constructor(private router: Router) {
-    console.log(this.playlist);
-  }
+  constructor(private router: Router) {}
 
-  playMusic(string: string) {
-    this.router.navigate(['/playlist', string]);
+  playMusic(id: string) {
+    this.router.navigate(['/playlist', id]);
   }
 }

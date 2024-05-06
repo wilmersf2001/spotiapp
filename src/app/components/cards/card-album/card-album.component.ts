@@ -14,6 +14,6 @@ export class CardAlbumComponent {
   constructor(private router: Router) {}
 
   playMusic(string: string) {
-    this.router.navigate(['/playlist', string]);
+    this.router.navigate(['/album', string]);
   }
 }

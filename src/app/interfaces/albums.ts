@@ -24,6 +24,7 @@ export interface ItemAlbum {
   release_date: Date;
   release_date_precision: ReleaseDatePrecision;
   total_tracks: number;
+  tracks: Tracks;
   type: AlbumTypeEnum;
   uri: string;
 }
@@ -46,10 +47,6 @@ export interface ExternalUrls {
   spotify: string;
 }
 
-export enum ArtistType {
-  Artist = 'artist',
-}
-
 export interface Image {
   height: number;
   url: string;
@@ -58,4 +55,52 @@ export interface Image {
 
 export enum ReleaseDatePrecision {
   Day = 'day',
+}
+
+export interface Tracks {
+  href: string;
+  items: ItemTracks[];
+  limit: number;
+  next: null;
+  offset: number;
+  previous: null;
+  total: number;
+}
+
+export interface ItemTracks {
+  artists: Artist[];
+  available_markets: string[];
+  disc_number: number;
+  duration_ms: number;
+  explicit: boolean;
+  external_urls: ExternalUrls;
+  href: string;
+  id: string;
+  is_local: boolean;
+  name: string;
+  preview_url: string;
+  track_number: number;
+  type: ItemType;
+  uri: string;
+}
+
+export interface Artist {
+  external_urls: ExternalUrls;
+  href: string;
+  id: string;
+  name: string;
+  type: ArtistType;
+  uri: string;
+}
+
+export interface ExternalUrls {
+  spotify: string;
+}
+
+export enum ArtistType {
+  Artist = 'artist',
+}
+
+export enum ItemType {
+  Track = 'track',
 }

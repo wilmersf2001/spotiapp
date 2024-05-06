@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ItemPlaylist, ItemTrack } from '../../interfaces/play-list';
+import { CapitalizarPipe } from '../../pipes/capitalizar.pipe';
 import { SrcTrackPipe } from '../../pipes/src-track.pipe';
 import { MinutosPipe } from '../../pipes/minutos.pipe';
-import { CapitalizarPipe } from '../../pipes/capitalizar.pipe';
 import { PlaylistService } from '../../services/playlist.service';
 
 @Component({
